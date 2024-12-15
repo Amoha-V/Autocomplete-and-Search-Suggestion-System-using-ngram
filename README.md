@@ -1,7 +1,3 @@
-Here’s a detailed version similar to the one in your reference for your **Autocomplete using N-Gram** project:
-
----
-
 ## Autocomplete System Using N-Grams
 
 This code demonstrates the implementation of an **Autocomplete System** based on an n-gram model. It predicts word completions and suggestions using trained n-grams from a given text corpus.
