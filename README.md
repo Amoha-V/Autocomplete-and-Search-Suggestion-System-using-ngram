@@ -3,7 +3,7 @@
 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://autocomplete-and-search-suggestion-system-using-ngram-6y5pemgk.streamlit.app/)
 
-This project demonstrates the implementation of an **Autocomplete System** based on an n-gram model. It predicts word completions and suggestions using trained n-grams from a given text corpus.
+This project demonstrates the implementation of an **Autocomplete System** based on an n-gram model. It predicts word completions and suggestions using trained n-grams from a given text corpus. This project was inspired by the [Google Books Ngram Viewer](https://books.google.com/ngrams/info).
 
 ![N-gram Autocomplete System Architecture](https://raw.githubusercontent.com/Amoha-V/Autocomplete-and-Search-Suggestion-System-using-ngram/main/system_architecture.png)
 
@@ -255,10 +255,18 @@ This code demonstrates how to efficiently build and use an n-gram model to provi
 
 --- 
 
+## References
+
+This project draws from the following resources:
+
+1. Jurafsky, D., & Martin, J. H. (2023). [Speech and Language Processing (3rd ed. draft)](https://web.stanford.edu/~jurafsky/slp3/3.pdf). Chapter 3: N-gram Language Models.
+2. [Google Books Ngram Viewer](https://books.google.com/ngrams/info) - A tool that charts frequencies of words or phrases in Google's text corpora.
+3. [Google Books Ngram Viewer - Wikipedia](https://en.wikipedia.org/wiki/Google_Books_Ngram_Viewer) - Background and history of the Google Books Ngram project.
+   
+
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
 ### License
-This project is proprietary. All rights reserved. No part of this project may be reproduced, distributed, or transmitted in any form or by any means.
-
+This project is licensed under the MIT License.
