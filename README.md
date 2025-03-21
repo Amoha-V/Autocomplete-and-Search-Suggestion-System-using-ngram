@@ -97,3 +97,175 @@ This code demonstrates how to efficiently build and use an n-gram model to provi
 --- 
 ### License
 This project is proprietary. All rights reserved. No part of this project may be reproduced, distributed, or transmitted in any form or by any means.
+
+
+
+ # Autocomplete and Search Suggestion System using N-grams
+
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://autocomplete-and-search-suggestion-system-using-ngram-6y5pemgk.streamlit.app/)
+
+An intelligent autocomplete system built with N-gram language models that offers predictive text suggestions based on statistical patterns in language.
+
+![N-gram Autocomplete System Architecture](https://raw.githubusercontent.com/Amoha-V/Autocomplete-and-Search-Suggestion-System-using-ngram/main/system_architecture.png)
+
+## Live Demo
+
+Try the live application: [Autocomplete and Search Suggestion System](https://autocomplete-and-search-suggestion-system-using-ngram-6y5pemgk.streamlit.app/)
+
+## Features
+
+- **Advanced N-gram Models**: Configurable N-gram size (2-gram, 3-gram, etc.)
+- **Multiple Smoothing Techniques**:
+  - Kneser-Ney smoothing
+  - Laplace (add-one) smoothing
+  - Basic MLE with backoff
+- **Interactive Prediction**: Real-time suggestions as you type
+- **Text Generation**: Create coherent text using the trained model
+- **Model Evaluation**: Calculate perplexity to measure model quality
+- **Persistence**: Save and load trained models
+- **User-friendly Interface**: Built with Streamlit for easy interaction
+
+## How It Works
+
+The system works by analyzing patterns in text data:
+
+1. **Training**: The model processes text and builds frequency dictionaries for word sequences (N-grams)
+2. **Context Analysis**: When given partial input, it identifies the most likely words to follow
+3. **Intelligent Prediction**: Uses statistical methods to rank potential completions
+4. **Smoothing**: Handles unseen word combinations through advanced smoothing techniques
+
+## Project Structure
+
+```
+├── ngram_autocomplete.py     # Core implementation of the N-gram model
+├── app.py                    # Streamlit web application
+├── requirements.txt          # Dependencies
+├── models/                   # Saved model files
+├── data/                     # Training corpus
+└── README.md                 # Project documentation
+```
+
+## Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/Amoha-V/Autocomplete-and-Search-Suggestion-System-using-ngram.git
+cd Autocomplete-and-Search-Suggestion-System-using-ngram
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run the Streamlit app
+streamlit run app.py
+```
+
+## Usage
+
+### Training a Model
+
+```python
+from ngram_autocomplete import NGramAutocomplete
+
+# Create an instance with desired parameters
+autocomplete = NGramAutocomplete(n=3, smoothing="kneser_ney")
+
+# Train on your text corpus
+corpus = [
+    "the quick brown fox jumps over the lazy dog",
+    "python is a great programming language for machine learning",
+    "natural language processing involves understanding human language",
+    "machine learning algorithms can predict text completions"
+]
+autocomplete.train(corpus)
+
+# Save the trained model
+autocomplete.save_model("models/my_model.pkl")
+```
+
+### Getting Autocomplete Suggestions
+
+```python
+# Load a pre-trained model
+autocomplete = NGramAutocomplete()
+autocomplete.load_model("models/my_model.pkl")
+
+# Get suggestions
+suggestions = autocomplete.get_suggestions("machine learning", top_k=5)
+print(suggestions)
+# Output: [('algorithms', 0.4), ('models', 0.3), ...]
+```
+
+### Generating Text
+
+```python
+# Generate text from a seed
+generated_text = autocomplete.generate_text("the quick", max_length=20)
+print(generated_text)
+```
+
+### Evaluating Model Performance
+
+```python
+# Calculate perplexity on test data
+test_corpus = ["the quick brown fox", "machine learning is fascinating"]
+perplexity = autocomplete.evaluate_perplexity(test_corpus)
+print(f"Model perplexity: {perplexity}")
+```
+
+## Advanced Features
+
+### Smoothing Methods
+
+The system implements multiple smoothing techniques to handle the sparsity problem:
+
+- **No Smoothing**: Basic maximum likelihood estimation with backoff
+- **Laplace Smoothing**: Adds a small count to all possible words to avoid zero probabilities
+- **Kneser-Ney Smoothing**: State-of-the-art method that considers how many different contexts a word appears in
+
+### Parameters
+
+- `n`: Size of N-grams (default: 3)
+- `smoothing`: Smoothing method (options: "kneser_ney", "laplace", None)
+- `discount`: Discount parameter for Kneser-Ney smoothing (default: 0.75)
+- `top_k`: Number of suggestions to return (default: 5)
+
+## Enhancing the N-gram Model
+
+To improve the performance and capabilities of the N-gram system, consider these enhancements:
+
+1. **Interpolated Smoothing**: Implement linear interpolation between different order N-grams for better probability estimates
+   ```python
+   # Combining bigram and trigram probabilities
+   final_prob = lambda1 * unigram_prob + lambda2 * bigram_prob + lambda3 * trigram_prob
+   ```
+
+2. **Domain-Specific Corpora**: Train specialized models for different domains (medical, legal, technical) to improve suggestion relevance
+
+3. **Spelling Correction**: Integrate edit distance algorithms (Levenshtein) to handle misspelled inputs
+   ```python
+   # Find closest match if input is not in vocabulary
+   if input_word not in vocabulary:
+       suggestions = get_closest_words(input_word, vocabulary, max_distance=2)
+   ```
+
+4. **Pruning Techniques**: Implement entropy-based or count-based pruning to reduce model size
+   ```python
+   # Remove n-grams with counts below threshold
+   pruned_ngrams = {context: completions for context, completions in ngram_freq.items() 
+                   if sum(completions.values()) >= min_count}
+   ```
+
+    ```
+
+## Web Application Features
+
+- **Model Training**: Upload and train on custom text
+- **Real-time Suggestions**: Get predictions as you type
+- **Parameter Tuning**: Adjust N-gram size and smoothing techniques
+- **Text Generation**: Create text from seed phrases
+- **Model Comparison**: Evaluate different configurations
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
