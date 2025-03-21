@@ -233,7 +233,7 @@ plt.style.use('dark_background')
 
 # App header
 st.markdown('<div class="main-header">N-Gram Autocomplete System</div>', unsafe_allow_html=True)
-st.markdown('<div class="info-text">An advanced natural language processing tool for training and testing N-gram language models. Use this system to predict text, generate content, and evaluate language model performance.</div>', unsafe_allow_html=True)
+st.markdown('<div class="info-text"> A language processing tool for training and testing N-gram language models. Use this system to predict text, generate content, and evaluate language model performance.</div>', unsafe_allow_html=True)
 
 # Create tabs for different functionality
 tab1, tab2, tab3, tab4 = st.tabs(["Train Model", "Get Suggestions", "Generate Text", "Evaluate Model"])
