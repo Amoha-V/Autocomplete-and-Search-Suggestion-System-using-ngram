@@ -1,7 +1,28 @@
-## Autocomplete System Using N-Grams
 
-This code demonstrates the implementation of an **Autocomplete System** based on an n-gram model. It predicts word completions and suggestions using trained n-grams from a given text corpus.
+ # Autocomplete and Search Suggestion System using N-grams
 
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://autocomplete-and-search-suggestion-system-using-ngram-6y5pemgk.streamlit.app/)
+
+This project demonstrates the implementation of an **Autocomplete System** based on an n-gram model. It predicts word completions and suggestions using trained n-grams from a given text corpus.
+
+![N-gram Autocomplete System Architecture](https://raw.githubusercontent.com/Amoha-V/Autocomplete-and-Search-Suggestion-System-using-ngram/main/system_architecture.png)
+
+## Live Demo
+
+Try the live application: [Autocomplete and Search Suggestion System](https://autocomplete-and-search-suggestion-system-using-ngram-6y5pemgk.streamlit.app/)
+
+## Features
+
+- **Advanced N-gram Models**: Configurable N-gram size (2-gram, 3-gram, etc.)
+- **Multiple Smoothing Techniques**:
+  - Kneser-Ney smoothing
+  - Laplace (add-one) smoothing
+  - Basic MLE with backoff
+- **Interactive Prediction**: Real-time suggestions as you type
+- **Text Generation**: Create coherent text using the trained model
+- **Model Evaluation**: Calculate perplexity to measure model quality
+- **Persistence**: Save and load trained models
+- **User-friendly Interface**: Built with Streamlit for easy interaction
 ### Key Components:
 
 #### 1. Reading and Preprocessing Data:
@@ -85,46 +106,6 @@ This code demonstrates the implementation of an **Autocomplete System** based on
      ```
 
 ---
-
-### Applications:
-- **Search Engines**: Suggest relevant query completions based on user input.
-- **Text Editors**: Predict next words or phrases for faster typing.
-- **Coding Environments**: Provide autocompletion for code keywords or syntax.
-- **Messaging Apps**: Generate typing suggestions for faster communication.
-
-This code demonstrates how to efficiently build and use an n-gram model to provide real-time autocomplete predictions for a variety of applications.
-
---- 
-### License
-This project is proprietary. All rights reserved. No part of this project may be reproduced, distributed, or transmitted in any form or by any means.
-
-
-
- # Autocomplete and Search Suggestion System using N-grams
-
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://autocomplete-and-search-suggestion-system-using-ngram-6y5pemgk.streamlit.app/)
-
-An intelligent autocomplete system built with N-gram language models that offers predictive text suggestions based on statistical patterns in language.
-
-![N-gram Autocomplete System Architecture](https://raw.githubusercontent.com/Amoha-V/Autocomplete-and-Search-Suggestion-System-using-ngram/main/system_architecture.png)
-
-## Live Demo
-
-Try the live application: [Autocomplete and Search Suggestion System](https://autocomplete-and-search-suggestion-system-using-ngram-6y5pemgk.streamlit.app/)
-
-## Features
-
-- **Advanced N-gram Models**: Configurable N-gram size (2-gram, 3-gram, etc.)
-- **Multiple Smoothing Techniques**:
-  - Kneser-Ney smoothing
-  - Laplace (add-one) smoothing
-  - Basic MLE with backoff
-- **Interactive Prediction**: Real-time suggestions as you type
-- **Text Generation**: Create coherent text using the trained model
-- **Model Evaluation**: Calculate perplexity to measure model quality
-- **Persistence**: Save and load trained models
-- **User-friendly Interface**: Built with Streamlit for easy interaction
-
 ## How It Works
 
 The system works by analyzing patterns in text data:
@@ -228,6 +209,14 @@ The system implements multiple smoothing techniques to handle the sparsity probl
 - `smoothing`: Smoothing method (options: "kneser_ney", "laplace", None)
 - `discount`: Discount parameter for Kneser-Ney smoothing (default: 0.75)
 - `top_k`: Number of suggestions to return (default: 5)
+- 
+## Web Application Features
+
+- **Model Training**: Upload and train on custom text
+- **Real-time Suggestions**: Get predictions as you type
+- **Parameter Tuning**: Adjust N-gram size and smoothing techniques
+- **Text Generation**: Create text from seed phrases
+- **Model Comparison**: Evaluate different configurations
 
 ## Enhancing the N-gram Model
 
@@ -256,16 +245,20 @@ To improve the performance and capabilities of the N-gram system, consider these
    ```
 
     ```
+### Applications:
+- **Search Engines**: Suggest relevant query completions based on user input.
+- **Text Editors**: Predict next words or phrases for faster typing.
+- **Coding Environments**: Provide autocompletion for code keywords or syntax.
+- **Messaging Apps**: Generate typing suggestions for faster communication.
 
-## Web Application Features
+This code demonstrates how to efficiently build and use an n-gram model to provide real-time autocomplete predictions for a variety of applications.
 
-- **Model Training**: Upload and train on custom text
-- **Real-time Suggestions**: Get predictions as you type
-- **Parameter Tuning**: Adjust N-gram size and smoothing techniques
-- **Text Generation**: Create text from seed phrases
-- **Model Comparison**: Evaluate different configurations
+--- 
 
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
+
+### License
+This project is proprietary. All rights reserved. No part of this project may be reproduced, distributed, or transmitted in any form or by any means.
 
