@@ -5,7 +5,6 @@
 
 This project demonstrates the implementation of an **Autocomplete System** based on an n-gram model. It predicts word completions and suggestions using trained n-grams from a given text corpus. This project was inspired by the [Google Books Ngram Viewer](https://books.google.com/ngrams/info).
 
-![N-gram Autocomplete System Architecture](https://raw.githubusercontent.com/Amoha-V/Autocomplete-and-Search-Suggestion-System-using-ngram/main/system_architecture.png)
 
 ## Live Demo
 
